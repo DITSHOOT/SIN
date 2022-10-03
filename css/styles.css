@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #181818;
+    z-index: 9999;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ol {
+    list-style: none;
+    width: 500px;
+}
+
+a:link {
+    text-decoration: none
+}
+
+ol li {
+    font-size: 2rem;
+    background: rgb(23, 23, 23);
+    margin: 10px 0;
+    padding: 20px 30px;
+    position: relative; /* Elle va se poser par rapport au block et non au body */ 
+    transition: all .4s;
+    cursor: pointer;
+    z-index: 5;
+}
+
+a {
+    margin: 10px 10px;
+}
+
+ol li::before {
+    content: ""; /* Initialisation du pseudo-élément "before" = activé */
+    position: absolute; /* Poser partout où on veut les bordures */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: orange;
+    transition: all .4s;
+    z-index: -1;
+}
+
+ol li:hover::before {
+    width: 100%;  
+    transform: translateX(10px);  
+}
+
+
+ol li:nth-child(1)::before { /* Prend le premier élément "li" */ 
+    background: #4285f4;
+}
+
+ol li:nth-child(2)::before {
+    background: #db4437;
+}
+
+ol li:nth-child(3)::before {
+    background: #f4b400;
+}
+
+ol li:nth-child(4)::before {
+    background: #0f9d58;
+}
+
+ol li:nth-child(5)::before {
+    background: #b6148d;
+}
+
+/*---------------------------------------------------
+ # Header
+---------------------------------------------------*/
+
+#header {
+    position: relative;
+    height: 100vh;
+    display: flex; /* Une à la suite des autres */ 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#header h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 80px;
+    left: 50%;
+    right: 50%;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    margin-right: 3rem;
+}
+
+#header h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 48px;
+    margin: 15px;
+    margin-right: 3rem; 
+}
+
+#header h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    margin: 20px;
+    margin-right: 3rem;
+}
+
+#header h4 {
+    font-family: "Raleway", sans-serif;
+    font-size: 23px;
+    margin: 15px;
+    margin-right: 3rem;
+    color: rgb(44, 44, 44);
+}
+
+/*--------------------------------------------------------------
+# DÉBUT DU PRELOADER
+--------------------------------------------------------------*/
+#preloader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #161616;
+  }
+  
+  #preloader::before {
+    content: '';
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid transparent;
+    border-radius: 50%;
+    border-top-color: #862222;
+    border-bottom-color: #862222;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+    -webkit-animation: animate-preloader 1s linear infinite;
+  }
+  
+  .fondu-out {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  @-webkit-keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  /*===== FIN DU PRELOADER =====*/   

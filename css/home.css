@@ -1,0 +1,131 @@
+:root {
+  --yellow: #ffe600;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: white;
+  transition: all .2s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  transition: flex .4s ease;
+  position: relative;
+}
+
+.section .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: background-color .8s ease;
+}
+
+.section h1 {
+  font-size: 75px;
+}
+
+
+.section .content {
+  z-index: 2;
+}
+
+.section:hover {
+  flex: 2;
+}
+
+.section:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#technology {
+  background-image: url('../ressources/img1.jpg');
+  cursor: pointer;
+}
+
+#coding {
+  background-image: url('../ressources/img2.jpg');
+  cursor: pointer;
+}
+
+#technology:hover h1, #coding:hover h1 {
+  transition: all .6s;
+  transform: scale(1.2);
+}
+
+
+/*--------------------------------------------------------------
+# DÉBUT DU PRELOADER
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #161616;
+}
+
+#preloader::before {
+  content: '';
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid transparent;
+  border-radius: 50%;
+  border-top-color: #862222;
+  border-bottom-color: #862222;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+  -webkit-animation: animate-preloader 1s linear infinite;
+}
+
+.fondu-out {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+@keyframes animate-preloader {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+/*===== FIN DU PRELOADER =====*/   

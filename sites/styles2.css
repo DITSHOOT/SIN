@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #181818;
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.justifier {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.presentation{
+    display: flex;
+    justify-content: center;
+    padding: 0 100px;
+}
+
+ol {
+    list-style: none;
+    width: 500px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+ol li {
+    font-size: 1.2rem;
+    background: rgb(23, 23, 23);
+    text-align: left;
+    margin: 25px;
+    padding: 25px;
+    cursor: pointer;
+    position: relative; /* Elle va se poser par rapport au block et non au body */ 
+    transition: all .4s;
+    z-index: 5;
+}
+
+ol li::before {
+    content: ""; /* Initialisation du pseudo-élément "before" = activé */
+    position: absolute; /* Poser partout où on veut les bordures */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: orange;
+    transition: all .4s;
+    z-index: -1 ;
+}
+
+ol li:hover::before {
+    width: 100%;    
+}
+
+ol li:nth-child(1)::before { /* Prend le premier élément "li" */ 
+    background: #4285f4;
+}
+
+ol li:nth-child(2)::before {
+    background: #db4437;
+}
+
+ol li:nth-child(3)::before {
+    background: #f4b400;
+}
+
+ol li:nth-child(4)::before {
+    background: #0f9d58;
+}
+
+ol li:nth-child(5)::before {
+    background: #b6148d;
+}
+
+ol li:hover { /* Ol = liste ordonée */
+    transform: translateX(20px); /* Décalement de 20px */
+}
+
+/*---------------------------------------------------
+ # Header
+---------------------------------------------------*/
+
+#header {
+    position: relative;
+    height: 100vh;
+    display: flex; /* Une à la suite des autres */ 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#header h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 80px;
+    left: 50%;
+    right: 50%;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    margin-right: 5rem;
+}
+
+#header h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    margin: 15px;
+    margin-right: 20rem;
+    margin-left: 15rem
+}
+
+#header h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    margin: 20px;
+    margin-right: 5rem;
+}
+
+#header h4 {
+    font-family: "Raleway", sans-serif;
+    font-size: 23px;
+    margin: 15px;
+    margin-top: 2rem;
+    margin-right: 5rem;
+    color: rgb(44, 44, 44);
+}
